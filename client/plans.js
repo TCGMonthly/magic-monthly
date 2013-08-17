@@ -1,7 +1,22 @@
 if(Meteor.isClient) {
+  var selectedEl = null;
+
+  var selectPlan = function(el, plan) {
+    var currentPlan = Session.get('plan');
+    $(selectedEl).removeClass('selected');
+    if(currentPlan && currentPlan.id === plan.id) {
+      Session.set('plan', null);
+      return;
+    }
+    $(el).addClass('selected');
+    selectedEl = el;
+    Session.set('plan', plan);
+  };
+
   Template.plans.plans = function () {
     var data = new Array();
     data.push({
+      id : 0,
       name : '3 Packs of Cards',
       price : '12.99',
       type : 'Monthly Subscription',
@@ -10,6 +25,7 @@ if(Meteor.isClient) {
       cardsPerPack : 15
     });
     data.push({
+      id : 1,
       name : '6 Packs of Cards',
       price : '24.99',
       type : 'Monthly Subscription',
@@ -18,6 +34,7 @@ if(Meteor.isClient) {
       cardsPerPack : 15
     });
     data.push({
+      id : 2,
       name : '12 Packs of Cards',
       price : '44.99',
       type : 'Monthly Subscription',
@@ -26,6 +43,7 @@ if(Meteor.isClient) {
       cardsPerPack : 15
     });
     data.push({
+      id : 3,
       name : 'Whole Box',
       price : '109.99',
       type : 'Monthly Subscription',
@@ -35,4 +53,10 @@ if(Meteor.isClient) {
     });
     return data;
   };
+
+  Template.plans.events({
+    'click .card' : function(e) {
+      selectPlan(e.currentTarget, this);
+    }
+  })
 }
