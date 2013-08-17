@@ -6,5 +6,5 @@ To run:
 
 Stack:
 
-stylus - http://learnboost.github.io/stylus/
-bootstrap 3 - http://getbootstrap.com/
+ * stylus - http://learnboost.github.io/stylus/
+ * bootstrap 3 - http://getbootstrap.com/
