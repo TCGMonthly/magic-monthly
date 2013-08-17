@@ -1,11 +1,34 @@
 serifFonts = Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif
 
+.card-holder:first-child .card {
+  background: url('/images/card_blue_empty.png');
+}
+
+.card-holder:first-child + .card-holder .card {
+  background: url('/images/card_green_empty.png');
+}
+
+.card-holder:first-child + .card-holder + .card-holder .card {
+  background: url('/images/card_red_empty.png');
+}
+
+.card-holder:first-child + .card-holder + .card-holder + .card-holder .card {
+  background: url('/images/card_gold_empty.png');
+}
+
 .card {
-  width: 255px;
-  height: 357px;
+  width: 265px;
+  height: 371px;
   font-family: serifFonts;
-  background : url('/images/card_blue_empty.png');
   position: relative;
+
+  &.selected {
+    width: 285px;
+    height: 391px;
+    margin: -10px 0 0 -10px;
+    border-radius: 24px;
+    border: 10px solid #f33939;
+  }
 }
 
 .card-data {
@@ -15,30 +38,33 @@ serifFonts = Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", G
   color: #181818;
 
   &.name {
-    top: 20px;
+    top: 22px;
     left: 27px;
   }
 
   &.price {
-    top: 20px;
+    top: 22px;
     right: 27px;
   }
 
   &.type {
-    top: 201px;
+    top: 210px;
     left: 27px;
     font-size: 12px;
   }
 
   &.description {
-    top: 227px;
-    left: 27px;
+    top: 236px;
+    left: 30px;
     width: 200px;
+    height: 100px;
   }
 
   &.amount {
-    top: 320px;
-    right: 27px;
+    top: 333px;
+    right: 19px;
     font-size: 13px;
+    width: 50px;
+    text-align: center;
   }
 }
