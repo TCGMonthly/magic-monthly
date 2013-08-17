@@ -9,3 +9,5 @@ insecure
 preserve-inputs
 stylus
 bootstrap-3
+accounts-ui
+accounts-password
