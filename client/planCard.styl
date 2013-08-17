@@ -1,0 +1,44 @@
+serifFonts = Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif
+
+.card {
+  width: 255px;
+  height: 357px;
+  font-family: serifFonts;
+  background : url('/images/card_blue_empty.png');
+  position: relative;
+}
+
+.card-data {
+  position: absolute;
+  font-weight: bold;
+  font-size: 14px;
+  color: #181818;
+
+  &.name {
+    top: 20px;
+    left: 27px;
+  }
+
+  &.price {
+    top: 20px;
+    right: 27px;
+  }
+
+  &.type {
+    top: 201px;
+    left: 27px;
+    font-size: 12px;
+  }
+
+  &.description {
+    top: 227px;
+    left: 27px;
+    width: 200px;
+  }
+
+  &.amount {
+    top: 320px;
+    right: 27px;
+    font-size: 13px;
+  }
+}

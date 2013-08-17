@@ -2,12 +2,14 @@
   <div class="plans section">
     <div class="container">
       <h2>Available Plans</h2>
-      <div class="row">
+      <div class="row plan-list">
         {{#each plans}}
           {{> plan-card}}
         {{/each}}
       </div>
-      <button class="btn btn-primary">Checkout</button>
+      <div class="row">
+        <div class="col-md-3"><button class="btn btn-primary btn-lg btn-block btn-checkout">Checkout</button></div>
+      </div>
     </div>
   </div>
 </template>
