@@ -1,3 +1,42 @@
-h1 {
+fonts = 'ostrich_sansblack', helvetica, arial, sans-serif
+
+@font-face {
+  font-family: 'ostrich_sansblack';
+  src: url('/fonts/ostrich-black.eot');
+  src: url('/fonts/ostrich-black.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/ostrich-black.woff') format('woff'),
+       url('/fonts/ostrich-black.ttf') format('truetype'),
+       url('/fonts/ostrich-black.svg#ostrich_sansblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2 {
+  font-family: fonts;
+}
+
+h2 {
   font-size: 50px;
+  margin: 0 0 10px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  font-size: 20px;
+
+  .num {
+    font-family: fonts;
+    font-size: 32px;
+    padding: 0 5px 0 0;
+  }
+}
+
+.section {
+  padding: 20px 0 0;
 }
