@@ -2,15 +2,22 @@ if(Meteor.isClient) {
   var selectedEl = null;
 
   var selectPlan = function(el, plan) {
+    var purchaseButton = $('.plans .btn-primary');
     var currentPlan = Session.get('plan');
     $(selectedEl).removeClass('selected');
     if(currentPlan && currentPlan.id === plan.id) {
       Session.set('plan', null);
+      purchaseButton.attr('disabled', 'disabled');
       return;
     }
     $(el).addClass('selected');
+    purchaseButton.removeAttr('disabled');
     selectedEl = el;
     Session.set('plan', plan);
+  };
+
+  Template.plans.rendered = function() {
+    $('.card:eq(2)').click();
   };
 
   Template.plans.plans = function () {

@@ -1,0 +1,29 @@
+<template name="stripe">
+  <div class="modal fade" id="stripe-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Complete Order</h4>
+        </div>
+        <div class="modal-body">
+          {{#with plan}}
+          <p>{{name}} - ${{price}} / month</p>
+          {{/with}}
+          <div class="address">
+            <h3>Address</h3>
+            {{> address-form}}
+          </div>
+          <div class="billing">
+            <h3>Billing</h3>
+            {{> billing-form}}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Purchase</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
